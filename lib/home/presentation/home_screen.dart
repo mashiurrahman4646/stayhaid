@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
 
                 // ===== Upcoming Medication =====
                 const HomeInfoTile(
-                  iconPath: 'assets/icons/Medication.png',
+                  iconPath: 'assets/icons/UpcomingMedication.png',
                   title: 'Upcoming Medication',
                   subtitle: 'Estradiol - 2:00 PM',
                 ),
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
 
                 // ===== Prepare for Doctor Visit =====
                 const HomeInfoTile(
-                  iconPath: 'assets/icons/PrepareforDoctoreVisit.png',
+                  iconPath: 'assets/icons/DoctoreVisit.png',
                   title: 'Prepare for Doctore Visit',
                   subtitle: 'Review your health summary',
                 ),
@@ -87,31 +87,35 @@ class HomeScreen extends StatelessWidget {
       child: GestureDetector(
         onTap: () {},
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 14.h),
+          width: 147.w,
+          height: 43.h,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30.r),
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color(0xFF925349),
-                Color(0xFFFDADA0),
+                Color(0xFFAC6B5B), // Reddish-brown from screenshot
+                Color(0xFFE3A593), // Lighter peach from screenshot
               ],
             ),
+            borderRadius: BorderRadius.circular(9999.r),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF925349).withOpacity(0.3),
+                color: const Color(0xFFAC6B5B).withOpacity(0.3),
                 blurRadius: 15,
+                spreadRadius: 5,
                 offset: const Offset(0, 8),
               ),
             ],
           ),
-          child: Text(
-            'Join Community',
-            style: GoogleFonts.inter(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
+          child: Center(
+            child: Text(
+              'Join Community',
+              style: GoogleFonts.outfit(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: Colors.white, // White text as per screenshot
+              ),
             ),
           ),
         ),

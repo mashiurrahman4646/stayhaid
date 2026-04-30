@@ -14,7 +14,7 @@ class NavbarUi extends StatelessWidget {
     return Scaffold(
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
       bottomNavigationBar: Container(
-        height: 100.h,
+        height: 70.h,
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
@@ -33,11 +33,11 @@ class NavbarUi extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildNavItem(0, 'HOME', null, 'assets/icons/homes.png', controller),
-              _buildNavItem(1, 'TRACK', null, 'assets/icons/tracks.png', controller),
-              _buildNavItem(2, 'MIRANDA', null, 'assets/icons/Miranda.png', controller),
-              _buildNavItem(3, 'MEDS', null, 'assets/icons/meds.png', controller),
-              _buildNavItem(4, 'PROFILE', null, 'assets/icons/profile.png', controller),
+              _buildNavItem(0, 'HOME', null, 'assets/icons/home.png', controller),
+              _buildNavItem(1, 'TRACK', null, 'assets/icons/track.png', controller),
+              _buildNavItem(2, 'MIRANDA', null, 'assets/icons/miranda.png', controller),
+              _buildNavItem(3, 'MEDS', null, 'assets/icons/Meds.png', controller),
+              _buildNavItem(4, 'PROFILE', null, 'assets/icons/profilee.png', controller),
             ],
           ),
         ),
@@ -48,8 +48,8 @@ class NavbarUi extends StatelessWidget {
   Widget _buildNavItem(int index, String label, IconData? icon, String? assetPath, NavbarController controller) {
     return Obx(() {
       bool isSelected = controller.selectedIndex.value == index;
-      Color activeColor = const Color(0xFFAC6B5B); // Maroon/Brown from buttons
-      Color inactiveColor = Colors.black;
+      Color activeColor = const Color(0xFFAC6B5B);
+      Color inactiveColor = const Color(0xFF5A6F65); // More muted inactive color from design
 
       return GestureDetector(
         onTap: () => controller.changeIndex(index),
@@ -62,24 +62,29 @@ class NavbarUi extends StatelessWidget {
               if (assetPath != null)
                 Image.asset(
                   assetPath,
-                  width: 26.w,
-                  height: 26.h,
+                  width: label == 'HOME' 
+                      ? 26.r 
+                      : (label == 'PROFILE' ? 21.r : 24.r),
+                  height: label == 'HOME' 
+                      ? 26.r 
+                      : (label == 'PROFILE' ? 21.r : 24.r),
                   color: isSelected ? activeColor : inactiveColor,
+                  fit: BoxFit.contain,
                 )
               else if (icon != null)
                 Icon(
                   icon,
-                  size: 26.sp,
+                  size: 24.r,
                   color: isSelected ? activeColor : inactiveColor,
                 ),
               SizedBox(height: 6.h),
               Text(
-                label,
-                style: GoogleFonts.sora(
+                label.toUpperCase(), // All Caps as per screenshot
+                style: GoogleFonts.outfit(
                   fontSize: 10.sp,
-                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                   color: isSelected ? activeColor : inactiveColor,
-                  letterSpacing: 0.5,
+                  letterSpacing: 0.8,
                 ),
               ),
             ],

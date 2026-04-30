@@ -26,13 +26,13 @@ class QuickLogSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               _buildQuickLogItem('assets/icons/hotflash.png', 'Hot Flash'),
-              SizedBox(width: 12.w),
+              SizedBox(width: 20.w),
               _buildQuickLogItem('assets/icons/sleep.png', 'Sleep'),
-              SizedBox(width: 12.w),
+              SizedBox(width: 20.w),
               _buildQuickLogItem('assets/icons/mood.png', 'Mood'),
-              SizedBox(width: 12.w),
+              SizedBox(width: 20.w),
               _buildQuickLogItem('assets/icons/energy.png', 'Energy'),
-              SizedBox(width: 12.w),
+              SizedBox(width: 20.w),
               _buildQuickLogItem('assets/icons/brainfog.png', 'Brain Fog'),
             ],
           ),
@@ -44,19 +44,39 @@ class QuickLogSection extends StatelessWidget {
   Widget _buildQuickLogItem(String iconPath, String label) {
     return Column(
       children: [
-        Image.asset(
-          iconPath,
-          width: 100.w,
-          height: 100.h,
-          fit: BoxFit.contain,
+        Container(
+          width: 48.w,
+          height: 48.w,
+          decoration: BoxDecoration(
+            color: const Color(0x33FFE3D6), // Figma background
+            borderRadius: BorderRadius.circular(12.r),
+            border: Border.all(
+              color: const Color(0xFFE5E7EB),
+              width: 0.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.03),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Image.asset(
+              iconPath,
+              width: 22.w,
+              height: 22.w,
+            ),
+          ),
         ),
-        SizedBox(height: 8.h),
+        SizedBox(height: 12.h),
         Text(
           label,
-          style: GoogleFonts.inter(
-            fontSize: 11.sp,
+          style: GoogleFonts.outfit(
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
-            color: const Color(0xFF334155),
+            color: const Color(0xFF1E293B),
           ),
         ),
       ],

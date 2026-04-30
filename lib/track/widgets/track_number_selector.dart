@@ -40,11 +40,11 @@ class TrackNumberSelector extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 48.w,
-                height: 48.h,
+                width: 40.w,
+                height: 40.h,
                 decoration: BoxDecoration(color: iconBg, shape: BoxShape.circle),
                 child: Center(
-                  child: Image.asset(iconPath, width: 24.w, height: 24.h),
+                  child: Image.asset(iconPath, width: 20.w, height: 20.h),
                 ),
               ),
               SizedBox(width: 14.w),
@@ -55,7 +55,7 @@ class TrackNumberSelector extends StatelessWidget {
                     Text(
                       title,
                       style: GoogleFonts.sora(
-                        fontSize: 18.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF2D3142),
                       ),

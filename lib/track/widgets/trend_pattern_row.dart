@@ -45,20 +45,20 @@ class TrendPatternRow extends StatelessWidget {
         Stack(
           children: [
             Container(
-              height: 12.h,
+              height: 6.h,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: const Color(0xFFF3F4F6),
-                borderRadius: BorderRadius.circular(6.r),
+                borderRadius: BorderRadius.circular(3.r),
               ),
             ),
             FractionallySizedBox(
               widthFactor: percentage,
               child: Container(
-                height: 12.h,
+                height: 6.h,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: gradientColors),
-                  borderRadius: BorderRadius.circular(6.r),
+                  borderRadius: BorderRadius.circular(3.r),
                 ),
               ),
             ),

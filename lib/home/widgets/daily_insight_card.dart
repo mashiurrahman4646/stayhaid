@@ -8,54 +8,64 @@ class DailyInsightCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 335.w,
-      height: 82.h,
-      padding: EdgeInsets.symmetric(horizontal: 21.w),
+      padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(color: const Color(0xFFE2E8F0).withOpacity(0.5)),
+        borderRadius: BorderRadius.circular(20.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+        ],
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 44.w,
-            height: 44.h,
+            width: 48.r,
+            height: 48.r,
             decoration: BoxDecoration(
-              color: const Color(0xFFFFC107).withOpacity(0.25),
+              color: const Color(0xFFFEF9E7),
               shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
             ),
-            child: Icon(
-              Icons.lightbulb_outline,
-              size: 22.sp,
-              color: const Color(0xFFF59E0B),
+            child: Center(
+              child: Image.asset(
+                'assets/icons/DailyInsight.png',
+                width: 24.r,
+                height: 24.r,
+              ),
             ),
           ),
-          SizedBox(width: 12.w),
+          SizedBox(width: 16.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Daily Insight',
-                  style: GoogleFonts.inter(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFF1E293B),
+                  style: GoogleFonts.outfit(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF1A2E35),
                   ),
                 ),
-                SizedBox(height: 2.h),
+                SizedBox(height: 6.h),
                 Text(
-                  'Your sleep quality has improved 15% this week...',
-                  style: GoogleFonts.inter(
-                    fontSize: 12.sp,
-                    color: const Color(0xFF64748B),
-                    height: 1.2,
+                  'Your sleep quality has improved 15% this week. Consider maintaining your current bedtime routine for optimal results.',
+                  style: GoogleFonts.outfit(
+                    fontSize: 14.sp,
+                    color: const Color(0xFF5A6F65),
+                    height: 1.4,
                   ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),

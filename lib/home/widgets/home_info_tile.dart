@@ -17,40 +17,62 @@ class HomeInfoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 26.h),
+      padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
-        color: const Color(0xFFF8FAFC),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: const Color(0xFFE2E8F0).withOpacity(0.5)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+        ],
       ),
       child: Row(
         children: [
-          Image.asset(
-            iconPath,
-            width: 100.w,
-            height: 100.h,
-            fit: BoxFit.contain,
+          Container(
+            width: 56.r,
+            height: 56.r,
+            decoration: BoxDecoration(
+              color: title.contains('Doctore') ? const Color(0xFFF5F5F5) : const Color(0xFFFDECE8),
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Center(
+              child: Image.asset(
+                iconPath,
+                width: 24.r,
+                height: 24.r,
+              ),
+            ),
           ),
-          SizedBox(width: 14.w),
+          SizedBox(width: 16.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.inter(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFF1E293B),
+                  style: GoogleFonts.outfit(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF1A2E35),
                   ),
                 ),
                 if (subtitle != null) ...[
                   SizedBox(height: 4.h),
                   Text(
                     subtitle!,
-                    style: GoogleFonts.inter(
+                    style: GoogleFonts.outfit(
                       fontSize: 13.sp,
-                      color: const Color(0xFF94A3B8),
+                      color: const Color(0xFF5A6F65),
                     ),
                   ),
                 ],
@@ -59,8 +81,8 @@ class HomeInfoTile extends StatelessWidget {
           ),
           Icon(
             Icons.chevron_right,
-            size: 22.sp,
-            color: const Color(0xFFCBD5E1),
+            size: 20.sp,
+            color: const Color(0xFFD1D5DB),
           ),
         ],
       ),

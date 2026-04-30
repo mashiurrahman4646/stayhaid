@@ -104,11 +104,11 @@ class TrackSliderSelector extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 48.w,
-                height: 48.h,
+                width: 40.w,
+                height: 40.h,
                 decoration: BoxDecoration(color: iconBg, shape: BoxShape.circle),
                 child: Center(
-                  child: Image.asset(iconPath, width: 24.w, height: 24.h),
+                  child: Image.asset(iconPath, width: 20.w, height: 20.h),
                 ),
               ),
               SizedBox(width: 14.w),
@@ -119,7 +119,7 @@ class TrackSliderSelector extends StatelessWidget {
                     Text(
                       title,
                       style: GoogleFonts.sora(
-                        fontSize: 18.sp,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF2D3142),
                       ),
@@ -127,7 +127,7 @@ class TrackSliderSelector extends StatelessWidget {
                     Text(
                       subtitle,
                       style: GoogleFonts.sora(
-                        fontSize: 13.sp,
+                        fontSize: 12.sp,
                         color: const Color(0xFF9098A3),
                       ),
                     ),
@@ -141,11 +141,11 @@ class TrackSliderSelector extends StatelessWidget {
             width: 285.w,
             child: SliderTheme(
               data: SliderThemeData(
-                trackHeight: 12.h,
+                trackHeight: 6.h,
                 activeTrackColor: const Color(0xFFAC6B5B).withOpacity(0.6),
                 inactiveTrackColor: const Color(0xFFF3F4F6),
                 thumbColor: Colors.white,
-                thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12.r, elevation: 4),
+                thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8.r, elevation: 4),
                 overlayColor: const Color(0xFFAC6B5B).withOpacity(0.1),
                 trackShape: GradientSliderTrackShape(),
               ),
