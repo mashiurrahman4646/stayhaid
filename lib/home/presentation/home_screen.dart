@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import '../../core/approut.dart';
 import '../controller/home_controller.dart';
 import '../widgets/daily_insight_card.dart';
 import '../widgets/home_header.dart';
 import '../widgets/home_info_tile.dart';
 import '../widgets/quick_log_section.dart';
 import '../widgets/today_summary_card.dart';
+import '../../nav_bar/navbar_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,10 +46,14 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 28.h),
 
                 // ===== Upcoming Medication =====
-                const HomeInfoTile(
+                HomeInfoTile(
                   iconPath: 'assets/icons/UpcomingMedication.png',
                   title: 'Upcoming Medication',
                   subtitle: 'Estradiol - 2:00 PM',
+                  onTap: () {
+                    final navbarController = Get.find<NavbarController>();
+                    navbarController.changeIndex(3);
+                  },
                 ),
                 SizedBox(height: 10.h),
 

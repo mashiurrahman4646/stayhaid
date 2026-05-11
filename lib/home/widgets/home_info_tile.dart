@@ -7,16 +7,21 @@ class HomeInfoTile extends StatelessWidget {
   final String title;
   final String? subtitle;
 
+  final VoidCallback? onTap;
+
   const HomeInfoTile({
     super.key,
     required this.iconPath,
     required this.title,
     this.subtitle,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
       padding: EdgeInsets.all(16.w),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -85,6 +90,7 @@ class HomeInfoTile extends StatelessWidget {
             color: const Color(0xFFD1D5DB),
           ),
         ],
+      ),
       ),
     );
   }

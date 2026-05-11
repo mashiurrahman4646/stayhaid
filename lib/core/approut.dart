@@ -13,6 +13,7 @@ import '../profile/presentation/terms and conditions.dart';
 import '../profile/presentation/help and support.dart';
 import '../profile/presentation/chat with us.dart';
 import '../profile/presentation/email support.dart';
+import '../meds/presentation/meds_screen.dart';
 
 
 import '../onbording/presentation/onbording_screen.dart';
@@ -35,6 +36,7 @@ class AppRoute {
   static const String chatSupport = '/chatSupport';
   static const String emailSupport = '/emailSupport';
   static const String notifications = '/notifications';
+  static const String meds = '/meds';
 
   static List<GetPage> routes = [
     GetPage(name: splash, page: () => const SplashScreen()),
@@ -53,5 +55,6 @@ class AppRoute {
     GetPage(name: chatSupport, page: () => const ChatWithUsScreen()),
     GetPage(name: emailSupport, page: () => const EmailSupportScreen()),
     GetPage(name: notifications, page: () => const NotificationsScreen()),
+    GetPage(name: meds, page: () => const MedsScreen()),
   ];
 }
